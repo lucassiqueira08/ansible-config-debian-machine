@@ -2,10 +2,20 @@
 - name: Install spotify snap
   command: snap install spotify
 
-- name: Install Sublime Snap
-  command: snap install sublime-text --classic
+- name: Install Pycharm Snap
+  command: sudo snap install pycharm-community --classic
 
 - name: Install Vscode Snap
   command: sudo snap install code --classic
 
-  
+- name: Install Dbeaver Snap
+  command: sudo snap install dbeaver-ce
+
+- name: Install Discord Snap
+  command: sudo snap install discord
+
+- name: Install Skype Snap
+  command: sudo snap install skype --classic
+
+- name: Install Xmind Snap
+  command: sudo snap install xmind

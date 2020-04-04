@@ -5,30 +5,24 @@
   become: yes
   pre_tasks:
     - name: update
-      raw: sudo pacman -Syyu "{{ not_confirm }}"
-
+      raw: sudo apt-get -y update
   tasks:
-    - name: Setup Git
-      import_role:
+    - name: setup git
+      include_role:
         name: git
-      become: yes
-
-    - name: Remove unsued packages
-      import_role:
-        name: uninstall_packages
-      become: yes
 
     - name: Install packages
-      import_role:
+      include_role:
         name: install_packages
-      become: yes
 
-    - name: Install and configure oh-my-zsh
-      import_role:
-        name: oh_my_zsh
-      become: yes
-    
+    - name: Install NVM
+      include_role:
+        name: nvm
+
+    - name: Install Oh My ZSH
+      include_role:
+        name: oh_my_zsh     
+
     - name: Install Pyenv
-      import_role:
+      include_role:
         name: pyenv
-      become: no

@@ -14,7 +14,6 @@
     dest: "{{home_folder}}/.zshrc"
   become: no
 
-
 - name: Set zsh default
-  shell: chsh -s /bin/zsh
+  shell: chsh -s $(which zsh)
   become: no

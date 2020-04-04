@@ -1,5 +1,4 @@
 ---
-
 - name: Download theme zsh-completions
   git:
     repo: https://github.com/zsh-users/zsh-completions.git

@@ -1,0 +1,20 @@
+---
+- name: Install package brave
+  apt:
+    name: brave-browser
+    state: present
+
+- name: Install package Snap
+  apt:
+    name: snapd
+    state: present
+
+- name: Install package zsh
+  apt:
+    name: zsh
+    state: present
+
+- name: Install package meld
+  apt:
+    name: meld
+    state: present

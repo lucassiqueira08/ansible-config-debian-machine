@@ -1,3 +1,5 @@
 - include_tasks: install_zshrc.yml
 - include_tasks: install_themes.yml
 - include_tasks: install_plugins.yml
+- include_tasks: install_fonts.yml
+- include_tasks: update_zshrc_config.yml

@@ -1,0 +1,91 @@
+
+
+- name: Insert zshrc content
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    backup: yes
+    block: |
+      # Path to your oh-my-zsh installation.
+      export ZSH="/home/lucas/.oh-my-zsh"
+
+      # POWER LEVEL 9K
+      # tema e fonte
+      POWERLEVEL9K_MODE='nerdfont-complete'
+      ZSH_THEME="powerlevel9k/powerlevel9k"
+
+      # adiciona nova linha e pula duas
+      POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+      POWERLEVEL9K_PROMPT_ADD_NEWLINE_COUNT=2
+
+      # adicona cursor na linha debaixo junto com as informações da direita
+      POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+      POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+
+      # icone da setinha antes do cursor
+      POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
+      POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+      # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+      # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073} "
+      POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%f "
+
+      #git
+      POWERLEVEL9K_VCS_BRANCH_ICON=$'\uF126 '
+      POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
+      POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
+      POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+
+      #encurta o diretorio
+      POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+
+      # conteudo do prompt
+      # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context battery dir vcs)
+      # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time dir_writable ip custom_wifi_signal ram load background_jobs)
+      POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context pyenv dir vcs)
+      POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery ram dir_writable)
+
+      # Formato do datetime
+      POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %d/%m/%y}"
+
+      # cor dos icones
+      POWERLEVEL9K_BATTERY_CHARGING='yellow'
+      POWERLEVEL9K_BATTERY_CHARGED='green'
+      POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
+      POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
+      POWERLEVEL9K_BATTERY_LOW_COLOR='red'
+      POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND='black'
+      POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='242'
+      POWERLEVEL9K_TIME_BACKGROUND='236'
+      POWERLEVEL9K_TIME_FOREGROUND='242'
+      POWERLEVEL9K_RAM_BACKGROUND='yellow'
+      POWERLEVEL9K_PYENV_BACKGROUND='25'
+
+      POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='236'
+      POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='004'
+
+      POWERLEVEL9K_OS_ICON_BACKGROUND='black'
+      POWERLEVEL9K_OS_ICON_FOREGROUND='cyan'
+
+      # Mostrar codigo do erro
+      POWERLEVEL9K_STATUS_CROSS='true'
+
+      # mostrar versao pyenv
+      POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW='true'
+
+      # Plugins
+      plugins=(
+      sudo
+      	git
+      	docker-compose
+      	docker
+      	dotenv
+      	pyenv
+      	python
+      )
+
+      source $ZSH/oh-my-zsh.sh
+
+      export ZSH="/home/lucas/.oh-my-zsh"
+
+      # POWER LEVEL 9K
+      # tema e fonte
+      POWERLEVEL9K_MODE='nerdfont-complete'
