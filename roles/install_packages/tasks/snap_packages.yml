@@ -1,4 +1,7 @@
 ---
+- name: Install snap core
+  command: snap install core
+
 - name: Install spotify snap
   command: snap install spotify
 

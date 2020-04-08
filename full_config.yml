@@ -7,21 +7,26 @@
     - name: update
       raw: sudo apt-get -y update
   tasks:
-    - name: setup git
-      include_role:
-        name: git
 
     - name: Install packages
       include_role:
         name: install_packages
 
-    - name: Install NVM
+    - name: config meld
       include_role:
-        name: nvm
+        name: meld
+
+    - name: setup git
+      include_role:
+        name: git
 
     - name: Install Oh My ZSH
       include_role:
         name: oh_my_zsh     
+
+    - name: Install NVM
+      include_role:
+        name: nvm
 
     - name: Install Pyenv
       include_role:

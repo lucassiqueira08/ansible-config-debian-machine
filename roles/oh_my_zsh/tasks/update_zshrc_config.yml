@@ -2,7 +2,7 @@
 
 - name: Insert zshrc content
   blockinfile:
-    path: /etc/ssh/sshd_config
+    path: "{{home_folder}}/.zshrc"
     backup: yes
     block: |
       # Path to your oh-my-zsh installation.
@@ -24,8 +24,6 @@
       # icone da setinha antes do cursor
       POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
       POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-      # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
-      # POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073} "
       POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%f "
 
       #git
@@ -38,8 +36,6 @@
       POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
       # conteudo do prompt
-      # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context battery dir vcs)
-      # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time dir_writable ip custom_wifi_signal ram load background_jobs)
       POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context pyenv dir vcs)
       POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time battery ram dir_writable)
 
@@ -74,18 +70,24 @@
       # Plugins
       plugins=(
       sudo
-      	git
-      	docker-compose
-      	docker
-      	dotenv
-      	pyenv
-      	python
+        git
+        docker-compose
+        docker
+        dotenv
+        pyenv
+        python
       )
 
       source $ZSH/oh-my-zsh.sh
 
       export ZSH="/home/lucas/.oh-my-zsh"
 
-      # POWER LEVEL 9K
-      # tema e fonte
-      POWERLEVEL9K_MODE='nerdfont-complete'
+      #Pyenv
+      export PATH="~/.pyenv/bin:$PATH"
+      eval "$(pyenv init -)"
+      eval "$(pyenv virtualenv-init -)"
+
+      #NVM
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

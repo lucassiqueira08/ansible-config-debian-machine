@@ -13,3 +13,9 @@
   become: false
   name: "Set cache password git"
   shell: "git config --global credential.helper 'cache --timeout=360000'"
+-
+  name: "Set meld as difftool"
+  shell: "git config --global diff.external {{home_folder}}/diff.py"
+-
+  name: "Set meld as merge tool"
+  shell: "git config --global merge.tool meld"

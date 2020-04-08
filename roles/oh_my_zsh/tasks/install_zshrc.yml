@@ -1,6 +1,6 @@
 ---
 - name: Backing up existing ~/.zshrc
-  shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
+  shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc.orig; fi
   become: no
 
 - name: Cloning  oh-my-zsh

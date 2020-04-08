@@ -3,3 +3,8 @@
   git:
     repo: https://github.com/pyenv/pyenv.git
     dest: "{{home_folder}}/.pyenv"
+
+- name: Adds permission to the pyenv directory
+  file:
+    path: "{{home_folder}}/.pyenv"
+    mode: '777'

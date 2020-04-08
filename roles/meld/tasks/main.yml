@@ -1,0 +1,18 @@
+--- 
+- 
+  name: "Create meld file"
+  file:
+    path: "{{home_folder}}/diff.py"
+    state: touch
+    mode: a+x
+- 
+  name: "Create meld file content"
+  blockinfile:
+    path: "{{home_folder}}/diff.py"
+    block: |
+      #!/usr/bin/python
+      import sys
+      import os
+      os.system(‘meld “%s” “%s”’ % (sys.argv[2], sys.argv[5]))
+
+
