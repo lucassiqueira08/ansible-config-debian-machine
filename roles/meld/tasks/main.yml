@@ -1,18 +1,20 @@
 --- 
 - 
   name: "Create meld file"
+  become_user: "{{user_remote}}"
   file:
     path: "{{home_folder}}/diff.py"
     state: touch
     mode: a+x
 - 
   name: "Create meld file content"
+  become_user: "{{user_remote}}"
   blockinfile:
     path: "{{home_folder}}/diff.py"
     block: |
       #!/usr/bin/python
       import sys
       import os
-      os.system('meld "%s" "%s"'' % (sys.argv[2], sys.argv[5]))
+      os.system('meld "%s" "%s"' % (sys.argv[2], sys.argv[5]))
 
 

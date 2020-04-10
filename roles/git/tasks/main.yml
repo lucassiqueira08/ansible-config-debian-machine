@@ -2,20 +2,28 @@
 - 
   git_config: 
     name: user.email
+    scope: global
     value: "{{git_email}}"
   name: "Config email git"
+  become_user: "{{user_remote}}"
+
 - 
   git_config: 
     name: user.name
+    scope: global
     value: "{{git_name}}"
   name: "Config name git"
+  become_user: "{{user_remote}}"
+
 - 
-  become: false
+  become_user: "{{user_remote}}"
   name: "Set cache password git"
   shell: "git config --global credential.helper 'cache --timeout=360000'"
 -
+  become_user: "{{user_remote}}"
   name: "Set meld as difftool"
   shell: "git config --global diff.external {{home_folder}}/diff.py"
 -
+  become_user: "{{user_remote}}"
   name: "Set meld as merge tool"
   shell: "git config --global merge.tool meld"

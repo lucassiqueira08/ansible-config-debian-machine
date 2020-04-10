@@ -14,12 +14,6 @@
     state: present
     remote: flathub
 
-# - name: Install Vscode from flathub
-#   flatpak:
-#     name: com.visualstudio.code
-#     state: present
-#     remote: flathub
-
 - name: Install Dbeaver from flathub
   flatpak:
     name: io.dbeaver.DBeaverCommunity

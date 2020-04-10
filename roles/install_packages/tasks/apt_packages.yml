@@ -23,3 +23,8 @@
   apt:
     name: code
     state: present
+
+- name: Install curl package
+  apt:
+    name: curl
+    state: present

@@ -1,7 +1,7 @@
 ---
 - name: Backing up existing ~/.zshrc
   shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc ~/.zshrc.orig; fi
-  become: no
+  become_user: "{{user_remote}}"
 
 - name: Cloning  oh-my-zsh
   git:
@@ -12,8 +12,8 @@
   copy:
     src: "{{name_folder_dest_zsh}}/templates/zshrc.zsh-template"
     dest: "{{home_folder}}/.zshrc"
-  become: no
+  become_user: "{{user_remote}}"
 
 - name: Set zsh default
   shell: chsh -s $(which zsh)
-  become: no
+  become_user: "{{user_remote}}"
