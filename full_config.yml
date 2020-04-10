@@ -5,6 +5,11 @@
   become: yes
 
   pre_tasks:
+    - name: Install curl package
+      apt:
+        name: curl
+        state: present
+  
     - name: Enable Microsoft Package Repo - Part 1
       raw: curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
     
