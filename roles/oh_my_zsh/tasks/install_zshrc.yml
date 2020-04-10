@@ -13,7 +13,3 @@
     src: "{{name_folder_dest_zsh}}/templates/zshrc.zsh-template"
     dest: "{{home_folder}}/.zshrc"
   become_user: "{{user_remote}}"
-
-- name: Set zsh default
-  shell: chsh -s $(which zsh)
-  become_user: "{{user_remote}}"
