@@ -12,9 +12,7 @@
   blockinfile:
     path: "{{home_folder}}/diff.py"
     block: |
-      #!/usr/bin/python
       import sys
       import os
       os.system('meld "%s" "%s"' % (sys.argv[2], sys.argv[5]))
-
-
+    marker: "#!/usr/bin/python"
