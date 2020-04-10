@@ -1,0 +1,41 @@
+---
+- name: Add flathub repo
+  command:  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+- name: Install spotify from flathub
+  flatpak:
+    name: com.spotify.Client
+    state: present
+    remote: flathub
+
+- name: Install Pycharm from flathub
+  flatpak:
+    name: com.jetbrains.PyCharm-Community
+    state: present
+    remote: flathub
+
+# - name: Install Vscode from flathub
+#   flatpak:
+#     name: com.visualstudio.code
+#     state: present
+#     remote: flathub
+
+- name: Install Dbeaver from flathub
+  flatpak:
+    name: io.dbeaver.DBeaverCommunity
+    state: present
+    remote: flathub
+
+- name: Install Discord from flathub
+  flatpak:
+    name: com.discordapp.Discord
+    state: present
+    remote: flathub
+
+- name: Install Xmind from flathub
+  flatpak:
+    name: net.xmind.ZEN
+    state: present
+    remote: flathub
+
+

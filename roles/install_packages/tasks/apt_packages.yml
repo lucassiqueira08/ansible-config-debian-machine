@@ -1,20 +1,25 @@
 ---
-- name: Install package brave
+- name: Install brave package
   apt:
     name: brave-browser
     state: present
 
-- name: Install package Snap
+- name: Install flatpak package
   apt:
-    name: snapd
+    name: flatpak
     state: present
 
-- name: Install package zsh
+- name: Install zsh package
   apt:
     name: zsh
     state: present
 
-- name: Install package meld
+- name: Install meld package
   apt:
     name: meld
+    state: present
+
+- name: Install code package
+  apt:
+    name: code
     state: present
