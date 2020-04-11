@@ -26,6 +26,12 @@
     state: present
     remote: flathub
 
+- name: Install Skype from flathub
+  flatpak:
+    name: com.skype.Client
+    state: present
+    remote: flathub
+
 - name: Install Xmind from flathub
   flatpak:
     name: net.xmind.ZEN

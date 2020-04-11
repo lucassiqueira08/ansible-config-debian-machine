@@ -15,6 +15,7 @@ Fork made to perform automated initial configuration of a debian-based machine w
         - Pycharm
         - Dbeaver
         - Discord
+        - Skype
         - Xmind
 
     2. Configures meld as output from git diff
